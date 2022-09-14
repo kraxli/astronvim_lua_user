@@ -36,4 +36,11 @@ return {
 	["ziontee113/syntax-tree-surfer"] = require("user.plugins.syntax-tree-surfer"),
 	["andweeb/presence.nvim"] = require("user.plugins.presence"),
 	["akinsho/git-conflict.nvim"] = require("user.plugins.git-conflict"),
+
+	-- -- Colorschemes:
+	-- { "Th3Whit3Wolf/one-nvim" }, -- lazy by nature
+	{ "sonph/onehalf", rtp = "vim" },
+	-- { "NLKNguyen/papercolor-theme" },
+	-- { "sainnhe/edge" },
+	-- { "sainnhe/everforest" },
 }

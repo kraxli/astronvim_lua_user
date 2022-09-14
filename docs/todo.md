@@ -1,3 +1,5 @@
+- changes to the auto-completion symbols have been some how introduced by commit from 2022-09-14
+
 - [x] user/settings.lua
 - [x] user/autocmds.lua
 - [x] autoload/\* -> markdown folding

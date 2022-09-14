@@ -1,4 +1,3 @@
-
 # Where to find what
 
 packer plugins directory: `/home/dave/.local/share/lunarvim/site/pack/packer`
@@ -21,10 +20,10 @@ nvim cache: /home/dave/.local/share/nvim/packer_compiled.lua
 
 # Nice colorschemes supporting light and dark background
 
-| Theme                                                |      Time of the day       |
-| ---------------------------------------------------- | :------------------------: |
-| [rose-pine](https://github.com/rose-pine/neovim)     |         [1am, 9am)         |
-| [tokyonight](https://github.com/folke/tokyonight)    |         [9am, 5pm)         |
+| Theme                                             | Time of the day |
+| ------------------------------------------------- | :-------------: |
+| [rose-pine](https://github.com/rose-pine/neovim)  |   [1am, 9am)    |
+| [tokyonight](https://github.com/folke/tokyonight) |   [9am, 5pm)    |
 
 - one-nvim
 
@@ -50,7 +49,7 @@ If you want ideas for configuring LunarVim you can look at these repositories.
 
 ## Packer
 
-Errors after `lvim +q`:  In case of compile (e.g. lsp-compile) errors or issues with (lazy) loading plugins, delete `~/.config/lvim/plugin` folder and run `PackerCompile`.
+Errors after `lvim +q`: In case of compile (e.g. lsp-compile) errors or issues with (lazy) loading plugins, delete `~/.config/lvim/plugin` folder and run `PackerCompile`.
 
 # Spell files
 
@@ -58,4 +57,8 @@ http://ftp.vim.org/vim/runtime/spell/de/
 
 # Vim / Neovim
 
- You can use the following name to view Buftype settings, when Buftype=nofile, cannot save the file, only when buftype= empty, can save
+You can use the following name to view Buftype settings, when Buftype=nofile, cannot save the file, only when buftype= empty, can save
+
+# Appearance
+
+- change to the "telescope floating dialog window" --> this is controlled by the colorscheme!!
