@@ -16,6 +16,8 @@
 - [ ] new mappings for Calendar-vim plugin (switched off defaults because of conflicts)
 - [ ] run code in interactive shell, send code, ...
 - [ ] how to debug
+- [ ] autocommnds: rewrite vim stuff to LUA
+- [ ] alpha: line at left hand side
 - [ ] https://alpha2phi.medium.com/jupyter-notebook-vim-neovim-c2d67d56d563
 - [ ] https://alpha2phi.medium.com/vim-neovim-plugins-for-a-better-integrated-experience-6accd4c2a52c
 - [ ] https://alpha2phi.medium.com/vim-neovim-managing-notes-and-todo-list-8ae8e3db6464
