@@ -19,11 +19,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_augroup("mini", { clear = true })
-vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen", "FileType alpha" }, {
 	desc = "Disable indent scope for conent types",
 	group = "mini",
 	callback = function()
-		vim.b.miniindentscope_disable = vim.tbl_contains({ "help", "terminal", "nofile", "prompt" }, vim.bo.buftype)
+		vim.b.miniindentscope_disable =
+			vim.tbl_contains({ "help", "terminal", "nofile", "prompt", "alpha" }, vim.bo.buftype)
 	end,
 })
 
