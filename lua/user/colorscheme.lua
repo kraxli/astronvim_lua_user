@@ -1,1 +1,1 @@
-return "dustkfox" -- onehalfdark" -- "duskfox"
+return "onehalfdark" -- "duskfox"

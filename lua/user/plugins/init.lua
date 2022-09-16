@@ -38,9 +38,9 @@ return {
 	["akinsho/git-conflict.nvim"] = require("user.plugins.git-conflict"),
 
 	-- -- Colorschemes:
-	-- { "Th3Whit3Wolf/one-nvim" }, -- lazy by nature
+	{ "Th3Whit3Wolf/one-nvim" }, -- lazy by nature
 	{ "sonph/onehalf", rtp = "vim" },
-	-- { "NLKNguyen/papercolor-theme" },
-	-- { "sainnhe/edge" },
-	-- { "sainnhe/everforest" },
+	{ "NLKNguyen/papercolor-theme" },
+	{ "sainnhe/edge" },
+	{ "sainnhe/everforest" },
 }
