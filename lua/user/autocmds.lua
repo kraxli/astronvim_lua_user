@@ -32,6 +32,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen", "FileType alpha" }, {
 -- kraxli:
 -- -------------------------------------------------------
 
+-- autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup="IncSearch", timeout=150})   -- higroup = 'Visual'
 vim.api.nvim_create_augroup("TextYankPost", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight text while yanking",
@@ -41,10 +42,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		require("vim.highlight").on_yank({ higroup = "IncSearch", timeout = 150 })
 	end, -- higroup = 'Visual'
 })
--- autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup="IncSearch", timeout=150})   -- higroup = 'Visual'
 
-local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
 
 -- augroup("_terminal", {})
 -- autocmd("TermEnter term://*toggleterm#*",{
@@ -58,22 +58,33 @@ autocmd("TermEnter term://*toggleterm#*", {
 	desc = "Close floating window",
 	group = "FloatingWindow",
 	-- pattern = "*",
-	-- command='tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>',
 	command = "nnoremap <silent><buffer> q :close<CR>",
+	-- command='tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>',
 })
+
+-- augroup("MarkdownBuf", { clear = true })
+-- autocmd({ "BufRead", "BufEnter", "BufWinEnter", "BufNew", "VimEnter", "InsertEnter" }, {
+-- 	group = "MarkdownBuf",
+-- 	desc = "Buffer markdown",
+-- 	pattern = { "*.md", "*.wiki" },
+-- 	callback = function()
+-- 		require("user.highlight").markdown()
+-- 	end,
+-- 	-- command = "lua require('user.highlight').markdown()",
+-- })
 
 vim.cmd([[
 
   augroup _general_settings
   autocmd!
   
-  "
   autocmd FileType toggleterm,qf,help,man,lspinfo,TelescopePrompt nnoremap <silent><buffer> q :close!<CR>
   autocmd FileType toggleterm,qf,help,man,lspinfo,TelescopePrompt nnoremap <silent><buffer> <localleader>c :close!<CR>
   " set file types
-  autocmd BufRead,BufEnter,BufWinEnter,BufNew,VimEnter *.md,*.wiki setlocal filetype=vimwiki.markdown
-  autocmd FileType vimwiki.markdown,vimwiki,markdown,text set foldmethod=expr foldexpr=MkdFoldSimple()
-  autocmd FileType vimwiki.markdown,vimwiki,markdown,text setl spell spelllang=en " ,de
+  autocmd BufRead,BufEnter,BufWinEnter,BufNew,VimEnter *.md,*.wiki setlocal filetype=markdown " vimwiki.markdown
+  autocmd BufRead,BufEnter,BufWinEnter,BufNew,BufWrite,VimEnter,InsertEnter *.md,*.wiki lua require('user.highlight').markdown()
+  " autocmd FileType vimwiki.markdown,vimwiki,markdown,text set foldmethod=expr foldexpr=MkdFoldSimple()
+  autocmd FileType vimwiki.markdown,vimwiki,markdown,text setl spell spelllang=en,de
 
   
   augroup end

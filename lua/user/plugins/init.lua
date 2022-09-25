@@ -37,10 +37,154 @@ return {
 	["andweeb/presence.nvim"] = require("user.plugins.presence"),
 	["akinsho/git-conflict.nvim"] = require("user.plugins.git-conflict"),
 
-	-- -- Colorschemes:
+	-- -------------------------------------------------------
+	-- KRAXLI ADDINGS:
+	-- -------------------------------------------------------
+	{
+		"tpope/vim-fugitive",
+		cmd = "Git",
+	},
+
+	-- Lsp:
+	{
+		event = "BufRead",
+		-- event = { "BufRead", "BufNew" },
+		config = function()
+			require("lsp_signature").setup()
+			-- require("user.plugins.lsp_signature").config()
+		end,
+	},
+
+	-- Markdown, Note taking, Writing:
+
+	-- {
+	-- 	"dkarter/bullets.vim",
+	-- 	ft = { "markdown", "text", "gitcommit", "scratch" },
+	-- 	config = function()
+	-- 		vim.g.bullets_enabled_file_types = {
+	-- 			"markdown",
+	-- 			"text",
+	-- 			"gitcommit",
+	-- 			"scratch",
+	-- 		}
+	-- 	end,
+	-- },
+
+	-- {
+	-- 	"ixru/nvim-markdown",
+	-- 	ft = { "markdown" },
+	-- 	config = function()
+	-- 		require("user.plugins.markdown.vim-markdown")
+	-- 	end,
+	-- },
+
+	-- {
+	-- 	"jakewvincent/mkdnflow.nvim",
+	-- 	-- rocks = 'luautf8',
+	-- 	config = function()
+	-- 		require("mkdnflow").setup({
+	-- 			-- Config goes here; leave blank for defaults
+	-- 		})
+	-- 	end,
+	-- },
+
+	{
+		"SidOfc/mkdx",
+		ft = { "markdown", "text", "vimwiki" }, -- vimwiki.markdown
+		setup = function()
+			require("user.plugins.markdown.mkdx")
+		end,
+	},
+	{
+		"machakann/vim-sandwich",
+		keys = { "s" },
+		event = "BufReadPost",
+		config = function()
+			require("user.plugins.sandwich")
+		end,
+	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	run = function()
+	-- 		vim.fn["mkdp#util#install"]()
+	-- 	end,
+	-- 	-- run = "cd app && npm install",  -- does not seem to work on windows
+	-- 	ft = "markdown",
+	-- 	config = function()
+	-- 		require("user.plugins.markdown.markdown_preview")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"renerocksai/calendar-vim", -- TODO: lazy loading ft or cmd
+	-- 	cmd = { "Calendar" },
+	-- 	config = function()
+	-- 		require("user.plugins.calendar-vim")
+	-- 	end,
+	-- },
+	-- -- { 'mracos/mermaid.vim', ft = {'markdown', 'vimwiki', 'mermaid'} },
+	-- { "chazmcgarvey/vim-mermaid", ft = { "markdown", "vimwiki", "mermaid" } },
+	-- {
+	-- 	"godlygeek/tabular",
+	-- 	ft = { "markdown", "vimwiki" },
+	-- },
+	--
+	-- -- TODO:
+	-- {
+	-- 	"renerocksai/telekasten.nvim",
+	-- 	ft = { "markdown", "vimwiki", "text" },
+	-- 	cmd = { "Telekasten", "Tk" },
+	-- 	keys = { "<leader>z" },
+	-- 	config = function()
+	-- 		vim.cmd([[
+	--        command! Tk :Telekasten
+	--      ]])
+	-- 		require("user.plugins.telekasten")
+	-- 	end,
+	-- 	disable = true,
+	-- },
+	-- {
+	-- 	"lervag/vimtex",
+	-- 	ft = "tex",
+	-- 	setup = function()
+	-- 		require("user.plugins.vimtex")
+	-- 	end,
+	-- },
+	-- {
+	-- 	"ekickx/clipboard-image.nvim",
+	-- 	cmd = "PasteImg",
+	-- 	ft = { "markdown", "text", "vimwiki" },
+	-- 	config = function()
+	-- 		require("user.plugins.clipboard-image")
+	-- 	end,
+	-- },
+	--
+	-- {
+	-- 	"nvim-orgmode/orgmode",
+	-- 	ft = { "org" },
+	-- 	after = "nvim-treesitter",
+	-- 	config = function()
+	-- 		require("user.plugins.orgmode")
+	-- 		-- require('orgmode').setup{}
+	-- 	end,
+	-- 	disable = true,
+	-- },
+	-- {
+	-- 	"nvim-neorg/neorg",
+	-- 	config = function()
+	-- 		require("neorg").setup({})
+	-- 	end,
+	-- },
+
+	-- Colorschemes:
 	{ "Th3Whit3Wolf/one-nvim" }, -- lazy by nature
 	{ "sonph/onehalf", rtp = "vim" },
 	{ "NLKNguyen/papercolor-theme" },
 	{ "sainnhe/edge" },
 	{ "sainnhe/everforest" },
 }
+
+-- ====================================================
+-- {
+-- "gfeiyou/command-center.nvim",
+-- requires = { "nvim-telescope/telescope.nvim" }
+-- },
