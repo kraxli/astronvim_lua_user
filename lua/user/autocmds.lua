@@ -83,7 +83,7 @@ vim.cmd([[
   " autocmd FileType vimwiki.markdown,vimwiki,markdown,text set foldmethod=expr foldexpr=MkdFoldSimple()
   autocmd FileType vimwiki.markdown,vimwiki,markdown,text setl spell spelllang=en,de
 
-	end
+  augroup end
 
   augroup _General
   autocmd!
