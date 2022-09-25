@@ -40,6 +40,7 @@ return {
 	-- -------------------------------------------------------
 	-- KRAXLI ADDINGS:
 	-- -------------------------------------------------------
+
 	{
 		"tpope/vim-fugitive",
 		cmd = "Git",
@@ -47,6 +48,7 @@ return {
 
 	-- Lsp:
 	{
+		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
 		-- event = { "BufRead", "BufNew" },
 		config = function()
