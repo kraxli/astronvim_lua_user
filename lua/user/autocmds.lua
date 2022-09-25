@@ -74,22 +74,28 @@ autocmd("TermEnter term://*toggleterm#*", {
 -- })
 
 vim.cmd([[
+	
+	augroup _MarkdownBuf
+	autocmd!
 
-  augroup _general_settings
-  autocmd!
-  
-  autocmd FileType toggleterm,qf,help,man,lspinfo,TelescopePrompt nnoremap <silent><buffer> q :close!<CR>
-  autocmd FileType toggleterm,qf,help,man,lspinfo,TelescopePrompt nnoremap <silent><buffer> <localleader>c :close!<CR>
-  " set file types
   autocmd BufRead,BufEnter,BufWinEnter,BufNew,VimEnter *.md,*.wiki setlocal filetype=markdown " vimwiki.markdown
   autocmd BufRead,BufEnter,BufWinEnter,BufNew,BufWrite,VimEnter,InsertEnter *.md,*.wiki lua require('user.highlight').markdown()
   " autocmd FileType vimwiki.markdown,vimwiki,markdown,text set foldmethod=expr foldexpr=MkdFoldSimple()
   autocmd FileType vimwiki.markdown,vimwiki,markdown,text setl spell spelllang=en,de
 
+	end
+
+  augroup _General
+  autocmd!
+  
+	autocmd WinClosed,WinEnter * if winnr('$') == 1 && &ft == "neo-tree" | q | endif
+  autocmd FileType toggleterm,qf,help,man,lspinfo,TelescopePrompt nnoremap <silent><buffer> q :close!<CR>
+  autocmd FileType toggleterm,qf,help,man,lspinfo,TelescopePrompt nnoremap <silent><buffer> <localleader>c :close!<CR>
+  " set file types
   
   augroup end
   
-  augroup _alpha
+  augroup _Alpha
     autocmd!
 		autocmd FileType alpha set nospell
   	"   autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
