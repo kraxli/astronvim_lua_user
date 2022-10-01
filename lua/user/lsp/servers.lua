@@ -9,7 +9,8 @@ return {
 	-- "prosemd_lsp"
 	"jsonls",
 	"pyright",
-	"sqls",
+	"sqlls",
+	-- "sqls",
 	"sumneko_lua",
 	"texlab",
 	"tsserver",

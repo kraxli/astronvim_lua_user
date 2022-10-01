@@ -13,7 +13,6 @@
 
 - [Mkdnflow.nvim](https://github.com/jakewvincent/mkdnflow.nvim): Tools for markdown notebook navigation and management
 
-
 ## General
 
 - SmiteshP/nvim-gps
@@ -21,3 +20,40 @@
 - ixru/nvim-markdown
 - kontekt/fasffold
 - masukomi/vim-markdown-folding
+
+## Cleaned out from plugins/init.lua
+
+```lua
+
+    -- Markdown, Note taking, Writing:
+
+    -- {
+    -- 	"dkarter/bullets.vim",
+    -- 	ft = { "markdown", "text", "gitcommit", "scratch" },
+    -- 	config = function()
+    -- 		vim.g.bullets_enabled_file_types = {
+    -- 			"markdown",
+    -- 			"text",
+    -- 			"gitcommit",
+    -- 			"scratch",
+    -- 		}
+    -- 	end,
+    -- },
+
+    -- {
+    -- 	"ixru/nvim-markdown",
+    -- 	ft = { "markdown" },
+    -- 	config = function()
+    -- 		require("user.plugins.markdown.vim-markdown")
+    -- 	end,
+    -- },
+
+    -- {
+    -- 	"jakewvincent/mkdnflow.nvim",
+    -- 	-- rocks = 'luautf8',
+    -- 	config = function()
+    -- 		require("mkdnflow").setup({
+    -- 			-- Config goes here; leave blank for defaults
+    -- 		})
+    -- 	end,
+```

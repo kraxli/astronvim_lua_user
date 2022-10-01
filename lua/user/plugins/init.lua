@@ -41,11 +41,20 @@ return {
 	-- KRAXLI ADDINGS:
 	-- -------------------------------------------------------
 
+	{ "nvim-treesitter/nvim-treesitter-refactor" },
+	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
-		"tpope/vim-fugitive",
-		cmd = "Git",
+		"romainl/vim-cool", -- disables search highlighting when you are done
+		event = { "CursorMoved", "InsertEnter" },
 	},
-
+	-- {
+	-- 	"folke/todo-comments.nvim",
+	-- 	requires = "nvim-lua/plenary.nvim",
+	-- 	config = function()
+	-- 		require("user.plugins.todo_comments").config()
+	-- 	end,
+	-- 	event = "BufRead",
+	-- },
 	-- Lsp:
 	{
 		"ray-x/lsp_signature.nvim",
@@ -56,40 +65,75 @@ return {
 			-- require("user.plugins.lsp_signature").config()
 		end,
 	},
-
-	-- Markdown, Note taking, Writing:
-
+	{
+		"sindrets/diffview.nvim",
+		opt = true,
+		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+		module = "diffview",
+		keys = "<leader>gd",
+		setup = function()
+			-- require("which-key").register { ["<leader>gd"] = "diffview: diff HEAD" }
+		end,
+		config = function()
+			require("diffview").setup({
+				enhanced_diff_hl = true,
+				key_bindings = {
+					file_panel = { q = "<Cmd>DiffviewClose<CR>" },
+					view = { q = "<Cmd>DiffviewClose<CR>" },
+				},
+			})
+		end,
+	},
+	{
+		"tpope/vim-fugitive",
+		cmd = "Git",
+	},
+	{
+		"TimUntersberger/neogit",
+		requires = { "nvim-lua/plenary.nvim", "diffview.nvim" },
+		cmd = "Neogit",
+		-- config = function ()
+		--   require('config.plugins.neogit')
+		-- end
+	},
+	{
+		"WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
+		event = "BufReadPost", -- FileType BufRead
+		cmd = { "ToggleDiag" },
+	},
+	-- simple-diagnostics removes the noise of every line error, and only show the current line error.
 	-- {
-	-- 	"dkarter/bullets.vim",
-	-- 	ft = { "markdown", "text", "gitcommit", "scratch" },
+	-- 	"casonadams/simple-diagnostics.nvim",
 	-- 	config = function()
-	-- 		vim.g.bullets_enabled_file_types = {
-	-- 			"markdown",
-	-- 			"text",
-	-- 			"gitcommit",
-	-- 			"scratch",
-	-- 		}
+	-- 		vim.diagnostic.config({
+	-- 			virtual_text = false,
+	-- 			underline = true,
+	-- 			float = { source = "always" },
+	-- 			severity_sort = true,
+	-- 			signs = true,
+	-- 			update_in_insert = false,
+	-- 		})
 	-- 	end,
-	-- },
-
-	-- {
-	-- 	"ixru/nvim-markdown",
-	-- 	ft = { "markdown" },
-	-- 	config = function()
-	-- 		require("user.plugins.markdown.vim-markdown")
-	-- 	end,
-	-- },
-
-	-- {
-	-- 	"jakewvincent/mkdnflow.nvim",
-	-- 	-- rocks = 'luautf8',
-	-- 	config = function()
-	-- 		require("mkdnflow").setup({
-	-- 			-- Config goes here; leave blank for defaults
+	-- 	setup = function()
+	-- 		require("simple-diagnostics").setup({
+	-- 			show_virtual_text = true,
+	-- 			show_message_area = false,
 	-- 		})
 	-- 	end,
 	-- },
-
+	{
+		"folke/trouble.nvim",
+		config = function()
+			require("trouble").setup({
+				auto_open = false,
+				auto_close = true,
+				padding = false,
+				height = 10,
+				use_diagnostic_signs = true,
+			})
+		end,
+		cmd = { "Trouble", "TroubleToggle" },
+	},
 	{
 		"SidOfc/mkdx",
 		ft = { "markdown", "text", "vimwiki" }, -- vimwiki.markdown
