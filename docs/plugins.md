@@ -1,5 +1,7 @@
 # Plugins to checkout / include
 
+- tagbar or vista
+
 ## Journaling / writing
 
 - Goyo: For distraction-free writing.
@@ -56,4 +58,17 @@
     -- 			-- Config goes here; leave blank for defaults
     -- 		})
     -- 	end,
+
+
+	{
+		"Pocco81/dap-buddy.nvim",
+		-- run = vim.fn.stdpath('data') ..'/site/pack/packer/opt/dap-buddy.nvim/make',
+		after = "nvim-dap",
+		-- config = function()
+		--   require("plugins/dap")
+		-- end,
+		disable = true,
+	},
+
+
 ```

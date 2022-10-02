@@ -1,12 +1,23 @@
 local M = {}
 
+local icons = {
+	FIX = "律",
+	TODO = " ",
+	HACK = " ",
+	WARN = "裂",
+	PERF = "龍",
+	NOTE = " ",
+	ERROR = " ",
+	REFS = "",
+}
+-- local icons = require("user.plugins.lspkind").todo_comments
+
 M.config = function()
 	local status_ok, todo = pcall(require, "todo-comments")
 	if not status_ok then
 		return
 	end
 
-	local icons = require("user.plugins.lspkind").todo_comments
 	todo.setup({
 		keywords = {
 			FIX = { icon = icons.FIX },

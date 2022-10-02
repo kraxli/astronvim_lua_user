@@ -10,4 +10,6 @@ return function()
 	require("user.autocmds")
 	require("user.commands")
 	require("user.vim_functions")
+
+	-- vim.diagnostic.config({ virtual_text = false })
 end

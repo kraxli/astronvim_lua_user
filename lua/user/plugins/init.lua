@@ -47,15 +47,21 @@ return {
 		"romainl/vim-cool", -- disables search highlighting when you are done
 		event = { "CursorMoved", "InsertEnter" },
 	},
-	-- {
-	-- 	"folke/todo-comments.nvim",
-	-- 	requires = "nvim-lua/plenary.nvim",
-	-- 	config = function()
-	-- 		require("user.plugins.todo_comments").config()
-	-- 	end,
-	-- 	event = "BufRead",
-	-- },
-	-- Lsp:
+	{
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("user.plugins.todo_comments").config()
+		end,
+		event = "BufRead",
+	},
+	--	{
+	--		"tknightz/telescope-termfinder.nvim",
+	--		after = { "nvim-telescope/telescope.nvim", "akinsho/toggleterm.nvim" },
+	--		config = function()
+	--			require("telescope").load_extension("termfinder")
+	--		end,
+	--	},
 	{
 		"ray-x/lsp_signature.nvim",
 		event = "BufRead",
@@ -89,12 +95,23 @@ return {
 		cmd = "Git",
 	},
 	{
+		"junegunn/gv.vim",
+		cmd = "GV",
+	},
+	{
 		"TimUntersberger/neogit",
 		requires = { "nvim-lua/plenary.nvim", "diffview.nvim" },
 		cmd = "Neogit",
-		-- config = function ()
-		--   require('config.plugins.neogit')
-		-- end
+		config = function()
+			require("user.plugins.neogit.config")
+		end,
+	},
+	{
+		"ahmedkhalf/lsp-rooter.nvim",
+		event = "BufRead",
+		config = function()
+			require("lsp-rooter").setup()
+		end,
 	},
 	{
 		"WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
@@ -113,11 +130,14 @@ return {
 	-- 			signs = true,
 	-- 			update_in_insert = false,
 	-- 		})
-	-- 	end,
-	-- 	setup = function()
 	-- 		require("simple-diagnostics").setup({
 	-- 			show_virtual_text = true,
 	-- 			show_message_area = false,
+	-- 		})
+	-- 	end,
+	-- 	setup = function()
+	-- 		vim.diagnostic.config({
+	-- 			virtual_text = false,
 	-- 		})
 	-- 	end,
 	-- },
@@ -133,6 +153,46 @@ return {
 			})
 		end,
 		cmd = { "Trouble", "TroubleToggle" },
+	},
+	{ "jalvesaq/Nvim-R", ft = { "r", "R", "rmd" }, command = { "StartR" } },
+	{
+		"andymass/vim-matchup",
+		event = "BufReadPost",
+		config = function()
+			vim.g.matchup_enabled = 1
+			vim.g.matchup_surround_enabled = 1
+			vim.g.matchup_matchparen_deferred = 1
+			vim.g.matchup_matchparen_offscreen = { method = "popup" }
+		end,
+	},
+	-- TODO: improve / refine setup and harpoon integration
+	-- see also: is0n/jaq-nvim and numToStr/FTerm.nvim
+	{
+		"CRAG666/code_runner.nvim",
+		cmd = { "RunCode", "RunFile", "RunClose", "RunProject", "CRFiletype", "CRProjects" },
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("user.plugins.code_runner")
+		end,
+	},
+	-- TODO: activate
+	{
+		"michaelb/sniprun",
+		run = "bash ./install.sh",
+		disable = true,
+	},
+	{
+		"ThePrimeagen/refactoring.nvim",
+		ft = { "typescript", "javascript", "lua", "c", "cpp", "go", "python", "java", "php" },
+		event = "BufRead",
+		config = function()
+			require("refactoring").setup({})
+		end,
+	},
+	{
+		"jbyuki/one-small-step-for-vimkind",
+		ft = { "lua" },
+		-- setup = function() require("config.plugins.dap") end,
 	},
 	{
 		"SidOfc/mkdx",
