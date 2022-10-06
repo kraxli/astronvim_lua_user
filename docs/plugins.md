@@ -1,6 +1,6 @@
 # Plugins to checkout / include
 
-- tagbar or vista
+- [ ] tagbar or vista
 
 ## Journaling / writing
 
