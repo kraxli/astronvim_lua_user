@@ -1,6 +1,7 @@
 # Plugins to checkout / include
 
-- [ ] tagbar or vista
+- [x] tagbar or vista
+- [ ] "rafi/vim-sidemenu" see rafi/nvim-config
 
 ## Journaling / writing
 

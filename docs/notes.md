@@ -62,3 +62,10 @@ You can use the following name to view Buftype settings, when Buftype=nofile, ca
 # Appearance
 
 - change to the "telescope floating dialog window" --> this is controlled by the colorscheme!!
+
+# Miscellaneous is ssues solved
+
+- fzf not installed issue solved by:
+
+  - ~/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim and run make
+  - see:https://github.com/nvim-telescope/telescope-fzf-native.nvim/issues/47
