@@ -14,6 +14,10 @@ vim.cmd([[
   cnoremap <C-b> <Left>
   cnoremap <expr> <Up>  pumvisible() ? "\<C-p>" : "\<Up>"
   cnoremap <expr> <Down>  pumvisible() ? "\<C-n>" : "\<Down>"
+
+  nmap [z [sz=
+  nmap ]z ]sz=
+
 ]])
 
 local opts = { noremap = true, silent = true }
@@ -127,8 +131,8 @@ return {
 		-- time stamps
 		["<F4>"] = { '=strftime("%Y-%m-%d")<CR>P', desc = "Time stamp" },
 		-- spell
-		["[z"] = { "[sz=", desc = "Correct previous spell", noremap = true, silent = true },
-		["]z"] = { "]sz=", desc = "Correct next spell", noremap = true, silent = true },
+		-- ["[z"] = { "[sz=", desc = "Correct previous spell", noremap = false, silent = true },
+		-- ["]z"] = { "]sz=", desc = "Correct next spell", noremap = false, silent = true },
 		-- Miscellenuous
 		["<C-z>"] = { ":undo<cr>", desc = "Undo" },
 

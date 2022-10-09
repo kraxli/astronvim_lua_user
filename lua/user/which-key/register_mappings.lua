@@ -426,6 +426,23 @@ return {
 			b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
 			c = { '<cmd>lua require("telescope.builtin").command_history()<CR>', "Command history" },
 			d = { '<cmd>lua require"user.plugins.telescope".pickers.plugin_directories()<CR>', "Directories" },
+			-- Trouble & Diagnostics --
+			D = {
+				name = "Diagnostics",
+				c = { "<cmd>TroubleClose<cr>", "Close" },
+				d = { "<cmd>ToggleDiag<cr>", "Toggle diagnostics" },
+				D = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definitions" },
+				i = { "<cmd>TroubleToggle lsp_implementations<cr>", "Implementations" },
+				f = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document" },
+				l = { "<cmd>TroubleToggle loclist<cr>", "Location list" },
+				q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
+				r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+				R = { "<cmd>TroubleRefresh<cr>", "Refresh" },
+				t = { "<cmd>TroubleToggle<cr>", "Trouble" },
+				T = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "Types" },
+				v = { "<Plug>(toggle-lsp-diag-vtext)<cr>", "Toggle vtext diagnostics" },
+				w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace" },
+			},
 			e = { "<Cmd>Neotree toggle<CR>", "Nvimtree toggle" }, -- Nvimtree
 			f = { '<cmd>lua require("telescope.builtin").find_files()<CR>', "Files" },
 			g = { '<cmd>lua require("telescope.builtin").live_grep()<CR>', "Live grep" },
@@ -448,6 +465,7 @@ return {
 				'<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>',
 				"LSP workspace symbols",
 			},
+			T = { "<cmd>Tagbar<CR>", "Tagbar toggle" }, -- or Vista
 			u = { '<cmd>lua require("telescope.builtin").resume()<CR>', "Resume last" },
 			v = { '<cmd>lua require("telescope.builtin").registers()<CR>', "Registers" },
 			w = { '<cmd>lua require("telescope.builtin").spell_suggest()<CR>', "Spell suggestions" },
@@ -456,24 +474,6 @@ return {
 			["/"] = {
 				'<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>',
 				"Search current buffer",
-			},
-
-			-- Trouble --
-			T = {
-				name = "Diagnostics",
-				c = { "<cmd>TroubleClose<cr>", "Close" },
-				d = { "<cmd>ToggleDiag<cr>", "Toggle diagnostics" },
-				D = { "<cmd>TroubleToggle lsp_definitions<cr>", "Definitions" },
-				i = { "<cmd>TroubleToggle lsp_implementations<cr>", "Implementations" },
-				f = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document" },
-				l = { "<cmd>TroubleToggle loclist<cr>", "Location list" },
-				q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-				r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-				R = { "<cmd>TroubleRefresh<cr>", "Refresh" },
-				t = { "<cmd>TroubleToggle<cr>", "Trouble" },
-				T = { "<cmd>TroubleToggle lsp_type_definitions<cr>", "Types" },
-				v = { "<Plug>(toggle-lsp-diag-vtext)<cr>", "Toggle vtext diagnostics" },
-				w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace" },
 			},
 		},
 		w = {
