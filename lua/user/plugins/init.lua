@@ -26,7 +26,7 @@ return {
 	["nvim-telescope/telescope-file-browser.nvim"] = require("user.plugins.telescope-file-browser"),
 	["nvim-telescope/telescope-hop.nvim"] = require("user.plugins.telescope-hop"),
 	["nvim-telescope/telescope-media-files.nvim"] = require("user.plugins.telescope-media-files"),
-	["nvim-telescope/telescope-project.nvim"] = require("user.plugins.telescope-project"),
+	["nvim-telescope/telescope-project.nvim"] = require("user.plugins.telescope-project"), -- TODO: do I need that gvien project.nvim?
 	["nvim-treesitter/nvim-treesitter-textobjects"] = require("user.plugins.nvim-treesitter-textobjects"),
 	["p00f/clangd_extensions.nvim"] = require("user.plugins.clangd_extensions"),
 	["phaazon/hop.nvim"] = require("user.plugins.hop"),
@@ -55,6 +55,7 @@ return {
 		end,
 		event = "BufRead",
 	},
+	{ "preservim/tagbar", cmd = { "Tagbar" } }, -- alternative vista.vim
 	--	{
 	--		"tknightz/telescope-termfinder.nvim",
 	--		after = { "nvim-telescope/telescope.nvim", "akinsho/toggleterm.nvim" },
@@ -107,10 +108,13 @@ return {
 		end,
 	},
 	{
-		"ahmedkhalf/lsp-rooter.nvim",
+		"ahmedkhalf/project.nvim",
 		event = "BufRead",
 		config = function()
-			require("lsp-rooter").setup()
+			require("project_nvim").setup({
+				-- configurations
+				require("telescope").load_extension("projects"),
+			})
 		end,
 	},
 	{
@@ -141,6 +145,15 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
+	{
+		"rafi/vim-venom",
+		ft = { "python" },
+		config = function()
+			require("user.plugins.venom")
+		end,
+		-- config = 'require("venom").setup()',  # for lua version which is inferior as of 2022-10-08
+		-- setup = function() vim.g.venom_loaded = 1 end ,  # for lua version which is inferior as of 2022-10-08
+	},
 	{
 		"folke/trouble.nvim",
 		config = function()
