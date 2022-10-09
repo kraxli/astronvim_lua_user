@@ -422,7 +422,7 @@ return {
 
 			-- TODO: commented out commands are not working - check rafi/vim-config for fix
 			-- Telescope general pickers
-			a = { "<Cmd>Neotree focus<CR>", "Nvimtree toggle" }, -- Nvimtree
+			a = { "<Cmd>Neotree toggle dir=%:p:h<CR>", "Neotree toggle" }, -- Nvimtree /  Neotree focus
 			b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
 			c = { '<cmd>lua require("telescope.builtin").command_history()<CR>', "Command history" },
 			d = { '<cmd>lua require"user.plugins.telescope".pickers.plugin_directories()<CR>', "Directories" },
@@ -443,7 +443,7 @@ return {
 				v = { "<Plug>(toggle-lsp-diag-vtext)<cr>", "Toggle vtext diagnostics" },
 				w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace" },
 			},
-			e = { "<Cmd>Neotree toggle<CR>", "Nvimtree toggle" }, -- Nvimtree
+			e = { "<Cmd>Neotree toggle<CR>", "Neotree toggle" },
 			f = { '<cmd>lua require("telescope.builtin").find_files()<CR>', "Files" },
 			g = { '<cmd>lua require("telescope.builtin").live_grep()<CR>', "Live grep" },
 			G = { "<cmd>lua require('user.plugins.telescope').pickers.grep_string_cursor()<cr>", "Grep cursor word" },
