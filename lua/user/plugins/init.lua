@@ -55,7 +55,6 @@ return {
 		end,
 		event = "BufRead",
 	},
-	{ "preservim/tagbar", cmd = { "Tagbar" } }, -- alternative vista.vim
 	--	{
 	--		"tknightz/telescope-termfinder.nvim",
 	--		after = { "nvim-telescope/telescope.nvim", "akinsho/toggleterm.nvim" },

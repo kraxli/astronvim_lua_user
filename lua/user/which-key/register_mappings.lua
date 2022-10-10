@@ -465,7 +465,7 @@ return {
 				'<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>',
 				"LSP workspace symbols",
 			},
-			T = { "<cmd>Tagbar<CR>", "Tagbar toggle" }, -- or Vista
+			T = { "<Cmd>AerialToggle<CR>", "Code Outline" }, -- already mapped at <leader>lS
 			u = { '<cmd>lua require("telescope.builtin").resume()<CR>', "Resume last" },
 			v = { '<cmd>lua require("telescope.builtin").registers()<CR>', "Registers" },
 			w = { '<cmd>lua require("telescope.builtin").spell_suggest()<CR>', "Spell suggestions" },
