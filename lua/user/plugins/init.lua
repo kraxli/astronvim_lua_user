@@ -106,6 +106,14 @@ return {
 			require("user.plugins.neogit.config")
 		end,
 	},
+	-- {
+	-- 	"tanvirtin/vgit.nvim",
+	-- 	event = "BufWinEnter",
+	-- 	cmd = "VGit",
+	-- 	config = function()
+	-- 		require("vgit").setup()
+	-- 	end,
+	-- },
 	{
 		"ahmedkhalf/project.nvim",
 		event = "BufRead",
