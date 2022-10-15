@@ -1,6 +1,8 @@
-
-
 # Python
+
+```vim
+:PyrightOrganizeImports " to organzie imports of python files
+```
 
 # Lua
 
