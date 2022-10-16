@@ -1,11 +1,13 @@
 return {
-	["declancm/cinnamon.nvim"] = { disable = true },
 	["famiu/bufdelete.nvim"] = { disable = true },
 	-- ["goolord/alpha-nvim"] = { disable = true },
 	["lukas-reineke/indent-blankline.nvim"] = { disable = true },
 	["max397574/better-escape.nvim"] = { disable = true },
 	["numToStr/Comment.nvim"] = { disable = true },
 	["EdenEast/nightfox.nvim"] = require("user.plugins.nightfox"),
+	["akinsho/git-conflict.nvim"] = require("user.plugins.git-conflict"),
+	["andweeb/presence.nvim"] = require("user.plugins.presence"),
+	["andymass/vim-matchup"] = require("user.plugins.vim-matchup"),
 	["danymat/neogen"] = require("user.plugins.neogen"),
 	["dhruvasagar/vim-table-mode"] = require("user.plugins.vim-table-mode"),
 	["echasnovski/mini.nvim"] = require("user.plugins.mini"),
@@ -34,8 +36,6 @@ return {
 	["vitalk/vim-simple-todo"] = require("user.plugins.vim-simple-todo"),
 	-- ["wakatime/vim-wakatime"] = require "user.plugins.vim-wakatime",
 	["ziontee113/syntax-tree-surfer"] = require("user.plugins.syntax-tree-surfer"),
-	["andweeb/presence.nvim"] = require("user.plugins.presence"),
-	["akinsho/git-conflict.nvim"] = require("user.plugins.git-conflict"),
 
 	-- -------------------------------------------------------
 	-- KRAXLI ADDINGS:
@@ -175,16 +175,6 @@ return {
 		cmd = { "Trouble", "TroubleToggle" },
 	},
 	{ "jalvesaq/Nvim-R", ft = { "r", "R", "rmd" }, command = { "StartR" } },
-	{
-		"andymass/vim-matchup",
-		event = "BufReadPost",
-		config = function()
-			vim.g.matchup_enabled = 1
-			vim.g.matchup_surround_enabled = 1
-			vim.g.matchup_matchparen_deferred = 1
-			vim.g.matchup_matchparen_offscreen = { method = "popup" }
-		end,
-	},
 	-- TODO: improve / refine setup and harpoon integration
 	-- see also: is0n/jaq-nvim and numToStr/FTerm.nvim
 	{

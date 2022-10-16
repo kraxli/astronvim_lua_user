@@ -13,12 +13,6 @@ CONFIGS.toggleterm = {
 -- vim.opt.completeopt = { "menuone", "noselect" }
 
 return {
-	g = {
-		maplocalleader = ",",
-	},
-	wo = {
-		number = true,
-	},
 	opt = {
 		conceallevel = 2, -- enable conceal
 		foldenable = false,
@@ -47,5 +41,12 @@ return {
 		hlsearch = true, -- highlight all matches on previous search pattern
 		ignorecase = true, -- ignore case in search patterns
 		smartcase = true,
+	},
+	g = {
+		maplocalleader = ",",
+		matchup_matchparen_deferred = 1,
+	},
+	wo = {
+		number = true,
 	},
 }
