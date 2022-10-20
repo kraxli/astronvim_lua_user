@@ -84,6 +84,18 @@ vim.cmd([[
     end
 
 
+	  if l:scheme =~# 'fox'
+	    let l:prefix_color = substitute(l:scheme, 'fox', '', '')
+		  let l:scheme = (l:scheme =~# 'nord'
+					  \ ? substitute(l:scheme, 'nord', 'day', '')
+					  \ : substitute(l:scheme, 'day', 'nord', '')
+		        \ )
+
+		  execute 'colorscheme ' .. l:scheme
+      return
+    end
+
+
 	  if l:scheme =~# 'dark' || l:scheme =~# 'light'
 		  " Rotate between different theme backgrounds
 		  execute 'colorscheme' (l:scheme =~# 'dark'
