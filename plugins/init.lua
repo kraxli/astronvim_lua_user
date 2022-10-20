@@ -219,17 +219,17 @@ return {
 			require("user.plugins.sandwich")
 		end,
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = function()
-	-- 		vim.fn["mkdp#util#install"]()
-	-- 	end,
-	-- 	-- run = "cd app && npm install",  -- does not seem to work on windows
-	-- 	ft = "markdown",
-	-- 	config = function()
-	-- 		require("user.plugins.markdown.markdown_preview")
-	-- 	end,
-	-- },
+	{
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+		-- run = "cd app && npm install",  -- does not seem to work on windows
+		ft = "markdown",
+		config = function()
+			require("user.plugins.markdown.markdown_preview")
+		end,
+	},
 	-- {
 	-- 	"renerocksai/calendar-vim", -- TODO: lazy loading ft or cmd
 	-- 	cmd = { "Calendar" },
@@ -245,35 +245,34 @@ return {
 	-- },
 	--
 	-- -- TODO:
-	-- {
-	-- 	"renerocksai/telekasten.nvim",
-	-- 	ft = { "markdown", "vimwiki", "text" },
-	-- 	cmd = { "Telekasten", "Tk" },
-	-- 	keys = { "<leader>z" },
-	-- 	config = function()
-	-- 		vim.cmd([[
-	--        command! Tk :Telekasten
-	--      ]])
-	-- 		require("user.plugins.telekasten")
-	-- 	end,
-	-- 	disable = true,
-	-- },
-	-- {
-	-- 	"lervag/vimtex",
-	-- 	ft = "tex",
-	-- 	setup = function()
-	-- 		require("user.plugins.vimtex")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"ekickx/clipboard-image.nvim",
-	-- 	cmd = "PasteImg",
-	-- 	ft = { "markdown", "text", "vimwiki" },
-	-- 	config = function()
-	-- 		require("user.plugins.clipboard-image")
-	-- 	end,
-	-- },
-	--
+	{
+		"renerocksai/telekasten.nvim",
+		ft = { "markdown", "vimwiki", "text" },
+		cmd = { "Telekasten", "Tk" },
+		keys = { "<leader>z" },
+		config = function()
+			vim.cmd([[
+	       command! Tk :Telekasten
+	     ]])
+			require("user.plugins.telekasten")
+		end,
+	},
+	{
+		"lervag/vimtex",
+		ft = "tex",
+		setup = function()
+			require("user.plugins.vimtex")
+		end,
+	},
+	{
+		"ekickx/clipboard-image.nvim",
+		cmd = "PasteImg",
+		ft = { "markdown", "text", "vimwiki" },
+		config = function()
+			require("user.plugins.clipboard-image")
+		end,
+	},
+
 	-- {
 	-- 	"nvim-orgmode/orgmode",
 	-- 	ft = { "org" },

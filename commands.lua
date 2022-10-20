@@ -16,6 +16,7 @@ vim.cmd([[
   " save and quit
   " command! W :w!
   command! Q :q
+  cnoreabbrev <silent> W w 
   cnoreabbrev <silent> ww w!
   cnoreabbrev <silent> wwa wa!
   cnoreabbrev <silent> xx x!
