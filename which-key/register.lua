@@ -516,6 +516,7 @@ return {
 				i = { "<cmd>TroubleToggle lsp_implementations<cr>", "Implementations" },
 				f = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document" },
 				l = { "<cmd>TroubleToggle loclist<cr>", "Location list" },
+				o = { "<cmd>cexpr system('refurb --quiet ' . shellescape(expand('%'))) | copen<CR><CR>", "Refurb" }, -- optimization suggestions
 				q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
 				r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 				R = { "<cmd>TroubleRefresh<cr>", "Refresh" },
